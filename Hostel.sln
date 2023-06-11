@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.WebApi", "Hostel.WebApi\Hostel.WebApi.csproj", "{9CF5246F-62F4-4D8B-94F1-71AE0013B1B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.Domain", "Hostel.Domain\Hostel.Domain.csproj", "{3BB2533A-5999-4259-8E42-3AABDECA3F59}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.Extensibility", "Hostel.Extensibility\Hostel.Extensibility.csproj", "{DDF0EA3A-C336-46F5-96FC-2E0E00741C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.Service", "Hostel.Service\Hostel.Service.csproj", "{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CF5246F-62F4-4D8B-94F1-71AE0013B1B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CF5246F-62F4-4D8B-94F1-71AE0013B1B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CF5246F-62F4-4D8B-94F1-71AE0013B1B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CF5246F-62F4-4D8B-94F1-71AE0013B1B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BB2533A-5999-4259-8E42-3AABDECA3F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BB2533A-5999-4259-8E42-3AABDECA3F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BB2533A-5999-4259-8E42-3AABDECA3F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BB2533A-5999-4259-8E42-3AABDECA3F59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDF0EA3A-C336-46F5-96FC-2E0E00741C90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDF0EA3A-C336-46F5-96FC-2E0E00741C90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDF0EA3A-C336-46F5-96FC-2E0E00741C90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDF0EA3A-C336-46F5-96FC-2E0E00741C90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
