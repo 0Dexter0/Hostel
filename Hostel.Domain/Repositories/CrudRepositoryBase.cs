@@ -1,4 +1,5 @@
-﻿using Hostel.Extensibility.Converters;
+﻿using Hostel.Domain.Context;
+using Hostel.Extensibility.Converters;
 using Hostel.Extensibility.Extensions;
 using Hostel.Extensibility.Filters;
 using Hostel.Extensibility.Models;
@@ -13,12 +14,12 @@ public abstract class CrudRepositoryBase<TServiceEntity, TDomainEntity, TEntityF
     where TEntityFilter : EntityFilterBase
 {
     private readonly IModelConverter<TServiceEntity, TDomainEntity> _modelConverter;
-    protected DbContext DbContext { get; }
+    protected HostelDbContext DbContext { get; }
 
     protected DbSet<TDomainEntity> Entities { get; }
 
     protected CrudRepositoryBase(
-        DbContext dbContext,
+        HostelDbContext dbContext,
         DbSet<TDomainEntity> entities,
         IModelConverter<TServiceEntity, TDomainEntity> modelConverter)
     {
@@ -30,22 +31,30 @@ public abstract class CrudRepositoryBase<TServiceEntity, TDomainEntity, TEntityF
     public IReadOnlyCollection<TServiceEntity> GetAll(TEntityFilter filter) =>
         ApplyFilter(filter).AsEnumerable().Select(_modelConverter.ToServiceModel).ToList();
 
-    public bool Add(TServiceEntity model, out TServiceEntity created)
+    public virtual bool Add(TServiceEntity model, out TServiceEntity created)
     {
         var result = Entities.Add(_modelConverter.ToDomainModel(model));
+        DbContext.SaveChanges();
         created = _modelConverter.ToServiceModel(result.Entity);
 
         return result.State is EntityState.Added;
     }
 
-    public bool Update(TServiceEntity model)
+    public virtual bool Update(TServiceEntity model)
     {
-        throw new NotImplementedException();
+        var origin = Entities.Find(model.Id);
+        DbContext.SaveChanges();
+        var result = Entities.Update(_modelConverter.ToDomainModel(model, origin));
+
+        return result.State is EntityState.Modified;
     }
 
-    public bool Delete(TServiceEntity model)
+    public virtual bool Delete(TServiceEntity model)
     {
-        throw new NotImplementedException();
+        var result = Entities.Remove(_modelConverter.ToDomainModel(model));
+        DbContext.SaveChanges();
+
+        return result.State is EntityState.Deleted;
     }
 
     protected bool CanApplyFilter<T>(IReadOnlyCollection<T> filterField) => filterField.IsNullOrEmpty();

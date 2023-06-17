@@ -6,7 +6,6 @@ public class HostelMappingProfile : Profile
 {
     public HostelMappingProfile()
     {
-        CreateMap<Models.Hostel, Extensibility.Models.Hostel>();
-        CreateMap<Extensibility.Models.Hostel, Models.Hostel>();
+        CreateMap<Models.Hostel, Extensibility.Models.Hostel>().ReverseMap();
     }
 }

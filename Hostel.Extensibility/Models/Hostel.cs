@@ -1,10 +1,10 @@
 ﻿namespace Hostel.Extensibility.Models;
 
-public class Hostel : EntityBase
+public record Hostel : EntityBase
 {
-    public string Address { get; set; }
+    public string Address { get; init; }
 
-    public int Number { get; set; }
+    public int Number { get; init; }
 
-    public string Description { get; set; }
+    public string Description { get; init; }
 }

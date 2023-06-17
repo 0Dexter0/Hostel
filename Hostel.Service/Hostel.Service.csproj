@@ -14,4 +14,10 @@
       <PackageReference Include="AutoMapper" Version="12.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Services\IHostelService.cs">
+        <DependentUpon>HostelService.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
 </Project>

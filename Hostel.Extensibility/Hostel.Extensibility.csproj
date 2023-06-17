@@ -5,4 +5,8 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MicrosoftDI.Module" Version="1.0.0" />
+    </ItemGroup>
+
 </Project>

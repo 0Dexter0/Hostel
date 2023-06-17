@@ -1,6 +1,6 @@
 ﻿namespace Hostel.Extensibility.Models;
 
-public class EntityBase
+public record EntityBase
 {
-    public int Id { get; set; }
+    public int Id { get; init; }
 }

@@ -1,12 +1,12 @@
 ﻿namespace Hostel.Extensibility.Models;
 
-public class Document : EntityBase
+public record Document : EntityBase
 {
-    public string Url { get; set; }
+    public string Url { get; init; }
 
-    public string DocumentType { get; set; }
+    public string DocumentType { get; init; }
 
-    public int TenantId { get; set; }
+    public int TenantId { get; init; }
 
-    public virtual Tenant Tenant { get; set; }
+    public virtual Tenant Tenant { get; init; }
 }

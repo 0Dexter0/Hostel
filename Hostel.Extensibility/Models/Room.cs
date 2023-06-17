@@ -1,12 +1,12 @@
 ﻿namespace Hostel.Extensibility.Models;
 
-public class Room : EntityBase
+public record Room : EntityBase
 {
-    public string Number { get; set; }
+    public string Number { get; init; }
 
-    public int MaxPeople { get; set; }
+    public int MaxPeople { get; init; }
 
-    public string ForSex { get; set; }
+    public string ForSex { get; init; }
 
-    public int HostelId { get; set; }
+    public int HostelId { get; init; }
 }

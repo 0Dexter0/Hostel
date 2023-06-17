@@ -1,14 +1,14 @@
 ﻿namespace Hostel.Extensibility.Models;
 
-public class Visit : EntityBase
+public record Visit : EntityBase
 {
-    public DateOnly Date { get; set; }
+    public DateOnly Date { get; init; }
 
-    public string Description { get; set; }
+    public string Description { get; init; }
 
-    public int TenantId { get; set; }
+    public int TenantId { get; init; }
 
-    public int PersonalId { get; set; }
+    public int PersonalId { get; init; }
 
-    public int HostelId { get; set; }
+    public int HostelId { get; init; }
 }

@@ -14,5 +14,11 @@ public class ModelConverter<TServiceModel, TDomainModel> : IModelConverter<TServ
 
     public TServiceModel ToServiceModel(TDomainModel domainModel) => _mapper.Map<TServiceModel>(domainModel);
 
+    public TServiceModel ToServiceModel(TDomainModel domainModel, TServiceModel serviceModel) =>
+        _mapper.Map(domainModel, serviceModel);
+
     public TDomainModel ToDomainModel(TServiceModel serviceModel) => _mapper.Map<TDomainModel>(serviceModel);
+
+    public TDomainModel ToDomainModel(TServiceModel serviceModel, TDomainModel domainModel) =>
+        _mapper.Map(serviceModel, domainModel);
 }
