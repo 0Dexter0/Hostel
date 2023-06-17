@@ -25,6 +25,9 @@
       <Compile Update="Repositories\IPersonalRepository.cs">
         <DependentUpon>PersonalRepository.cs</DependentUpon>
       </Compile>
+      <Compile Update="Repositories\IRoomRepository.cs">
+        <DependentUpon>RoomRepository.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
