@@ -7,6 +7,4 @@ public record Document : EntityBase
     public string DocumentType { get; init; }
 
     public int TenantId { get; init; }
-
-    public virtual Tenant Tenant { get; init; }
 }
