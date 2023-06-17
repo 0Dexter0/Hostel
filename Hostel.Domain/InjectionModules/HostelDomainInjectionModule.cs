@@ -13,5 +13,6 @@ public class HostelDomainInjectionModule : InjectionModuleBase
         services.AddTransient<IPersonalRepository, PersonalRepository>();
         services.AddTransient<IDocumentRepository, DocumentRepository>();
         services.AddTransient<IRoomRepository, RoomRepository>();
+        services.AddTransient<IVisitRepository, VisitRepository>();
     }
 }
