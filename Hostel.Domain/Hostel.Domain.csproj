@@ -16,7 +16,9 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Mapping" />
+      <Compile Update="Repositories\IHostelRepository.cs">
+        <DependentUpon>HostelRepository.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

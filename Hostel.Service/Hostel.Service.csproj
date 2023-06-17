@@ -6,6 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Hostel.Domain\Hostel.Domain.csproj" />
       <ProjectReference Include="..\Hostel.Extensibility\Hostel.Extensibility.csproj" />
     </ItemGroup>
 
