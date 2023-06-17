@@ -4,7 +4,7 @@ using Hostel.Extensibility.Filters;
 
 namespace Hostel.Domain.Repositories;
 
-public class HostelRepository : CrudRepositoryBase<Extensibility.Models.Hostel, Models.Hostel, HostelFilter>, IHostelRepository
+internal class HostelRepository : CrudRepositoryBase<Extensibility.Models.Hostel, Models.Hostel, HostelFilter>, IHostelRepository
 {
     public HostelRepository(
         HostelDbContext dbContext, IModelConverter<Extensibility.Models.Hostel, Models.Hostel> modelConverter)

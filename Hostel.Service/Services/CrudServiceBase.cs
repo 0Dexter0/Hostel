@@ -4,7 +4,7 @@ using Hostel.Extensibility.Models;
 
 namespace Hostel.Service.Services;
 
-public abstract class CrudServiceBase<TEntity, TEntityFilter> : ICrudServiceBase<TEntity, TEntityFilter>
+internal abstract class CrudServiceBase<TEntity, TEntityFilter> : ICrudServiceBase<TEntity, TEntityFilter>
     where TEntity : EntityBase
     where TEntityFilter : EntityFilterBase
 {

@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Hostel.Domain.Repositories;
 
-public abstract class CrudRepositoryBase<TServiceEntity, TDomainEntity, TEntityFilter>
+internal abstract class CrudRepositoryBase<TServiceEntity, TDomainEntity, TEntityFilter>
     : ICrudRepositoryBase<TServiceEntity, TEntityFilter>
     where TServiceEntity : EntityBase
     where TDomainEntity : Models.EntityBase

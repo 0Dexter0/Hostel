@@ -3,17 +3,18 @@ using Hostel.Extensibility.Converters;
 using Hostel.Extensibility.Extensions;
 using Hostel.Extensibility.Filters;
 using Hostel.Extensibility.Models;
+using Personal = Hostel.Domain.Models.Personal;
 
 namespace Hostel.Domain.Repositories;
 
-internal class TenantRepository : CrudRepositoryBase<SecurityTenant, Models.Tenant, TenantFilter>, ITenantRepository
+internal class PersonalRepository : CrudRepositoryBase<SecurityPersonal, Personal, PersonalFilter>, IPersonalRepository
 {
-    public TenantRepository(HostelDbContext dbContext, IModelConverter<SecurityTenant, Models.Tenant> modelConverter)
-        : base(dbContext, dbContext.Tenants, modelConverter)
+    public PersonalRepository(HostelDbContext dbContext, IModelConverter<SecurityPersonal, Personal> modelConverter)
+        : base(dbContext, dbContext.Personals, modelConverter)
     {
     }
 
-    protected override IQueryable<Models.Tenant> ApplyFilter(TenantFilter filter)
+    protected override IQueryable<Personal> ApplyFilter(PersonalFilter filter)
     {
         var query = Entities.AsQueryable();
 
@@ -42,34 +43,14 @@ internal class TenantRepository : CrudRepositoryBase<SecurityTenant, Models.Tena
             query = query.Where(x => filter.Role.Contains(x.Role));
         }
 
-        if (!filter.Sex.IsNullOrEmpty())
-        {
-            query = query.Where(x => filter.Sex.Contains(x.Sex));
-        }
-
         if (!filter.PhoneNumber.IsNullOrEmpty())
         {
             query = query.Where(x => filter.PhoneNumber.Contains(x.PhoneNumber));
         }
 
-        if (!filter.RoomId.IsNullOrEmpty())
-        {
-            query = query.Where(x => filter.RoomId.Contains(x.RoomId));
-        }
-
         if (!filter.HostelId.IsNullOrEmpty())
         {
             query = query.Where(x => filter.HostelId.Contains(x.HostelId));
-        }
-
-        if (!filter.CheckInDate.IsNullOrEmpty())
-        {
-            query = query.Where(x => filter.CheckInDate.Contains(x.CheckInDate));
-        }
-
-        if (!filter.CheckOutDate.IsNullOrEmpty())
-        {
-            query = query.Where(x => filter.CheckOutDate.Contains(x.CheckOutDate));
         }
 
         return query;

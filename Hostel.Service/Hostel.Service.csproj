@@ -18,6 +18,12 @@
       <Compile Update="Services\IHostelService.cs">
         <DependentUpon>HostelService.cs</DependentUpon>
       </Compile>
+      <Compile Update="Services\ITenantService.cs">
+        <DependentUpon>TenantService.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Services\IPersonalService.cs">
+        <DependentUpon>PersonalService.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>
