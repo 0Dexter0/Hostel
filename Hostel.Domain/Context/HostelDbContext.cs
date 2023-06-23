@@ -69,8 +69,6 @@ public class HostelDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("Tenants_pkey");
 
-            entity.Property(e => e.Password).HasDefaultValueSql("''::character varying");
-
             entity.HasOne(d => d.Hostel).WithMany(p => p.Tenants)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("Tenants_HostelId_fkey");

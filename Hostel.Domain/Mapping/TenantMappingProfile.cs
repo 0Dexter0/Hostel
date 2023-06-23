@@ -8,6 +8,6 @@ public class TenantMappingProfile : Profile
 {
     public TenantMappingProfile()
     {
-        CreateMap<Tenant, SecurityTenant>().ReverseMap();
+        CreateMap<Tenant, Extensibility.Models.Tenant>().ReverseMap();
     }
 }

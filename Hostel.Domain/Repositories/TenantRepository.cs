@@ -6,9 +6,9 @@ using Hostel.Extensibility.Models;
 
 namespace Hostel.Domain.Repositories;
 
-internal class TenantRepository : CrudRepositoryBase<SecurityTenant, Models.Tenant, TenantFilter>, ITenantRepository
+internal class TenantRepository : CrudRepositoryBase<Tenant, Models.Tenant, TenantFilter>, ITenantRepository
 {
-    public TenantRepository(HostelDbContext dbContext, IModelConverter<SecurityTenant, Models.Tenant> modelConverter)
+    public TenantRepository(HostelDbContext dbContext, IModelConverter<Tenant, Models.Tenant> modelConverter)
         : base(dbContext, dbContext.Tenants, modelConverter)
     {
     }

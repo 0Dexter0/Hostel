@@ -6,7 +6,7 @@ using Hostel.WebApi.Routes;
 namespace Hostel.WebApi.Controllers;
 
 [RestRoute($"{CollectionName}")]
-public class TenantController : RestControllerBase<SecurityTenant, TenantFilter>
+public class TenantController : RestControllerBase<Tenant, TenantFilter>
 {
     private const string CollectionName = "tenants";
 

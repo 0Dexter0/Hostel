@@ -3,6 +3,6 @@ using Hostel.Extensibility.Models;
 
 namespace Hostel.Service.Services;
 
-public interface ITenantService : ICrudServiceBase<SecurityTenant, TenantFilter>
+public interface ITenantService : ICrudServiceBase<Tenant, TenantFilter>
 {
 }

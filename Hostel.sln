@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.Extensibility", "Hos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.Service", "Hostel.Service\Hostel.Service.csproj", "{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hostel.Auth", "Hostel.Auth\Hostel.Auth.csproj", "{D90AF495-022C-4F0C-B590-CDB4759766A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65F2BF2B-4CB9-4911-B7A9-FA9067CBF5CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D90AF495-022C-4F0C-B590-CDB4759766A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D90AF495-022C-4F0C-B590-CDB4759766A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D90AF495-022C-4F0C-B590-CDB4759766A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D90AF495-022C-4F0C-B590-CDB4759766A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

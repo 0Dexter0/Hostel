@@ -23,9 +23,6 @@ public class Tenant : EntityBase
     [Column(TypeName = "character varying")]
     public string Role { get; set; }
 
-    [Column(TypeName = "character varying")]
-    public string Password { get; set; }
-
     public DateOnly CheckInDate { get; set; }
 
     public DateOnly CheckOutDate { get; set; }
