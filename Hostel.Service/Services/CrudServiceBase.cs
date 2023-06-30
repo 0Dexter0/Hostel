@@ -1,3 +1,4 @@
+using Hostel.Domain.Models.Response;
 using Hostel.Domain.Repositories;
 using Hostel.Extensibility.Filters;
 using Hostel.Extensibility.Models;
@@ -15,11 +16,20 @@ internal abstract class CrudServiceBase<TEntity, TEntityFilter> : ICrudServiceBa
         _repository = repository;
     }
 
-    public IReadOnlyCollection<TEntity> GetAll(TEntityFilter filter) => _repository.GetAll(filter);
+    public OperationResponse<IReadOnlyCollection<TEntity>> GetAll(TEntityFilter filter) => new(_repository.GetAll(filter));
 
-    public bool Add(TEntity model, out TEntity created) => _repository.Add(model, out created);
+    public OperationResponse<TEntity> Add(TEntity model, out TEntity created) =>
+        _repository.Add(model, out created)
+        ? new(created)
+        : new(MessageLevel.Error, $"Can't add current {model.GetType().Name}.");
 
-    public bool Update(TEntity model) => _repository.Update(model);
+    public OperationResponse Update(TEntity model) =>
+        _repository.Update(model)
+            ? new()
+            : new(MessageLevel.Error, $"Can't update current {model.GetType().Name}.");
 
-    public bool Delete(TEntity model) => _repository.Delete(model);
+    public OperationResponse Delete(TEntity model) =>
+        _repository.Delete(model)
+            ? new()
+            : new(MessageLevel.Error, $"Can't delete current {model.GetType().Name}.");
 }

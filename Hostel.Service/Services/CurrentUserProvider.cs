@@ -27,7 +27,8 @@ internal class CurrentUserProvider : ICurrentUserProvider
         var phoneNumber = _context.User.FindFirst(x => x.Type is ClaimTypes.MobilePhone);
         ArgumentNullException.ThrowIfNull(phoneNumber);
 
-        var currentUser = _personalService.GetAll(new() { PhoneNumber = phoneNumber.Value.AsList() }).FirstOrDefault();
+        var currentUser = _personalService.GetAll(
+            new() { PhoneNumber = phoneNumber.Value.AsList() }).Result.FirstOrDefault();
 
         _currentUser = currentUser ?? throw new InvalidDataException($"User with {phoneNumber.Value} phone number doesn't exist.");
 

@@ -1,3 +1,4 @@
+using Hostel.Domain.Models.Response;
 using Hostel.Extensibility.Filters;
 using Hostel.Extensibility.Models;
 
@@ -7,11 +8,11 @@ public interface ICrudServiceBase<TEntity, in TEntityFilter>
     where TEntity : EntityBase
     where TEntityFilter : EntityFilterBase
 {
-    IReadOnlyCollection<TEntity> GetAll(TEntityFilter filter);
+    OperationResponse<IReadOnlyCollection<TEntity>> GetAll(TEntityFilter filter);
 
-    bool Add(TEntity model, out TEntity created);
+    OperationResponse<TEntity> Add(TEntity model, out TEntity created);
 
-    bool Update(TEntity model);
+    OperationResponse Update(TEntity model);
 
-    bool Delete(TEntity model);
+    OperationResponse Delete(TEntity model);
 }
