@@ -1,5 +1,6 @@
 using Hostel.Extensibility.Converters;
 using Hostel.Service.Converters;
+using Hostel.Service.Providers;
 using Hostel.Service.Services;
 using Microsoft.DependencyInjection.Module.InjectionModules;
 using Microsoft.Extensions.DependencyInjection;

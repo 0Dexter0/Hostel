@@ -35,14 +35,14 @@
         <Compile Update="Services\IAuthPersonalService.cs">
             <DependentUpon>AuthPersonalService.cs</DependentUpon>
         </Compile>
-        <Compile Update="Services\ICurrentUserProvider.cs">
-          <DependentUpon>CurrentUserProvider.cs</DependentUpon>
-        </Compile>
         <Compile Update="Services\IVisitService.cs">
           <DependentUpon>VisitService.cs</DependentUpon>
         </Compile>
         <Compile Update="Services\ICrudServiceBase.cs">
           <DependentUpon>CrudServiceBase.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Providers\ICurrentUserProvider.cs">
+          <DependentUpon>CurrentUserProvider.cs</DependentUpon>
         </Compile>
     </ItemGroup>
 

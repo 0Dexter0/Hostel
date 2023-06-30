@@ -1,6 +1,6 @@
 using Hostel.Extensibility.Models;
 
-namespace Hostel.Service.Services;
+namespace Hostel.Service.Providers;
 
 public interface ICurrentUserProvider
 {

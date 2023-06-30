@@ -1,9 +1,10 @@
 using System.Security.Claims;
 using Hostel.Extensibility.Extensions;
 using Hostel.Extensibility.Models;
+using Hostel.Service.Services;
 using Microsoft.AspNetCore.Http;
 
-namespace Hostel.Service.Services;
+namespace Hostel.Service.Providers;
 
 internal class CurrentUserProvider : ICurrentUserProvider
 {
