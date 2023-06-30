@@ -1,8 +1,9 @@
+using Hostel.Domain.Models.Response;
 using Hostel.Extensibility.Models;
 
 namespace Hostel.Auth.Services;
 
 public interface IRegistrationService
 {
-    bool Register(Personal registerData);
+    OperationResponse Register(Personal registerData);
 }

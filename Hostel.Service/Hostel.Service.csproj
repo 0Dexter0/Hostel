@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+    <Import Project="../Directory.Build.targets" />
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -12,27 +13,37 @@
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="12.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Services\IHostelService.cs">
-        <DependentUpon>HostelService.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Services\ITenantService.cs">
-        <DependentUpon>TenantService.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Services\IPersonalService.cs">
-        <DependentUpon>PersonalService.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Services\IDocumentService.cs">
-        <DependentUpon>DocumentService.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Services\IRoomService.cs">
-        <DependentUpon>RoomService.cs</DependentUpon>
-      </Compile>
-      <Compile Update="Services\IAuthPersonalService.cs">
-        <DependentUpon>AuthPersonalService.cs</DependentUpon>
-      </Compile>
+        <Compile Update="Services\IHostelService.cs">
+            <DependentUpon>HostelService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\ITenantService.cs">
+            <DependentUpon>TenantService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\IPersonalService.cs">
+            <DependentUpon>PersonalService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\IDocumentService.cs">
+            <DependentUpon>DocumentService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\IRoomService.cs">
+            <DependentUpon>RoomService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\IAuthPersonalService.cs">
+            <DependentUpon>AuthPersonalService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\ICurrentUserProvider.cs">
+          <DependentUpon>CurrentUserProvider.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\IVisitService.cs">
+          <DependentUpon>VisitService.cs</DependentUpon>
+        </Compile>
+        <Compile Update="Services\ICrudServiceBase.cs">
+          <DependentUpon>CrudServiceBase.cs</DependentUpon>
+        </Compile>
     </ItemGroup>
 
 </Project>

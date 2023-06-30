@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Hostel.Auth.Models;
+using Hostel.Domain.Models.Response;
 using Hostel.Extensibility.Models;
 using Hostel.Service.Services;
 using Microsoft.Extensions.Configuration;
@@ -20,18 +21,18 @@ internal class LoginService : ILoginService
         _configuration = configuration;
     }
 
-    public string Login(PersonalLoginModel loginModel)
+    public OperationResponse<string> Login(PersonalLoginModel loginModel)
     {
         var personalToLogin =  _personalService.GetByPhoneNumber(loginModel.PhoneNumber);
 
         if (personalToLogin is null)
         {
-            return null;
+            return new(MessageLevel.Error, "User with current phone number doesn't exist.");
         }
 
         bool isPasswordValid = BCrypt.Net.BCrypt.Verify(loginModel.Password, personalToLogin.Password);
 
-        return isPasswordValid ? CreateToken(personalToLogin) : null;
+        return isPasswordValid ? new(CreateToken(personalToLogin)) : new(MessageLevel.Error, "Invalid password.");
     }
 
     private string CreateToken(Personal personal)

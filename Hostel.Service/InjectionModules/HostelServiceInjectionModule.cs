@@ -19,5 +19,7 @@ public class HostelServiceInjectionModule : InjectionModuleBase
         services.AddTransient<IRoomService, RoomService>();
         services.AddTransient<IVisitService, VisitService>();
         services.AddTransient<IAuthPersonalService, AuthPersonalService>();
+
+        services.AddScoped<ICurrentUserProvider, CurrentUserProvider>();
     }
 }

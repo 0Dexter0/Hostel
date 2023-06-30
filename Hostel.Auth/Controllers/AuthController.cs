@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using Hostel.Auth.Models;
 using Hostel.Auth.Services;
 using Hostel.Extensibility.Models;
@@ -19,23 +20,23 @@ public class AuthController : ControllerBase
     [HttpPost("register")]
     public IActionResult Register(Personal registerData)
     {
-        bool isRegistered = _registrationService.Register(registerData);
+        var registerResult = _registrationService.Register(registerData);
 
-        return isRegistered ? new OkResult() : new BadRequestResult();
+        return registerResult.IsValid ? new OkObjectResult(registerResult) : new BadRequestObjectResult(registerResult);
     }
 
     [HttpPost("login")]
     public IActionResult Login(PersonalLoginModel loginData)
     {
-        string token = _loginService.Login(loginData);
+        var tokenResult = _loginService.Login(loginData);
 
-        if (token is null)
+        if (!tokenResult.IsValid)
         {
-            return new BadRequestResult();
+            return new BadRequestObjectResult(tokenResult);
         }
 
-        // HttpContext.User.AddIdentity(new(new Claim[]{ new(ClaimTypes.MobilePhone, loginData.PhoneNumber) }));
+        HttpContext.User.AddIdentity(new(new Claim[]{ new(ClaimTypes.MobilePhone, loginData.PhoneNumber) }));
 
-        return new OkObjectResult(token);
+        return new OkObjectResult(tokenResult);
     }
 }
