@@ -4,9 +4,9 @@ using Hostel.Extensibility.Models;
 
 namespace Hostel.Service.Services;
 
-internal class PersonalService : CrudServiceBase<SecurityPersonal, PersonalFilter>, IPersonalService
+internal class SecurityPersonalService : CrudServiceBase<SecurityPersonal, PersonalFilter>, ISecurityPersonalService
 {
-    public PersonalService(IPersonalRepository repository)
+    public SecurityPersonalService(ISecurityPersonalRepository repository)
         : base(repository)
     {
     }

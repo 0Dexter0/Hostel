@@ -57,7 +57,7 @@ internal abstract class CrudRepositoryBase<TServiceEntity, TDomainEntity, TEntit
         return result.State is EntityState.Deleted;
     }
 
-    protected bool CanApplyFilter<T>(IReadOnlyCollection<T> filterField) => filterField.IsNullOrEmpty();
+    protected bool CanApplyFilter<T>(IReadOnlyCollection<T> filterField) => !filterField.IsNullOrEmpty();
 
     protected abstract IQueryable<TDomainEntity> ApplyFilter(TEntityFilter filter);
 }

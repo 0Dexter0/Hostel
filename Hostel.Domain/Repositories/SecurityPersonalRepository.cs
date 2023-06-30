@@ -7,9 +7,9 @@ using Personal = Hostel.Domain.Models.Personal;
 
 namespace Hostel.Domain.Repositories;
 
-internal class PersonalRepository : CrudRepositoryBase<SecurityPersonal, Personal, PersonalFilter>, IPersonalRepository
+internal class SecurityPersonalRepository : CrudRepositoryBase<SecurityPersonal, Personal, PersonalFilter>, ISecurityPersonalRepository
 {
-    public PersonalRepository(HostelDbContext dbContext, IModelConverter<SecurityPersonal, Personal> modelConverter)
+    public SecurityPersonalRepository(HostelDbContext dbContext, IModelConverter<SecurityPersonal, Personal> modelConverter)
         : base(dbContext, dbContext.Personals, modelConverter)
     {
     }

@@ -3,5 +3,5 @@
 public static class CollectionExtensions
 {
     public static bool IsNullOrEmpty<T>(this IEnumerable<T> collection) =>
-        collection is null || collection.GetEnumerator().MoveNext();
+        collection is null || !collection.GetEnumerator().MoveNext();
 }

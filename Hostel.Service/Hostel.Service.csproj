@@ -30,6 +30,9 @@
       <Compile Update="Services\IRoomService.cs">
         <DependentUpon>RoomService.cs</DependentUpon>
       </Compile>
+      <Compile Update="Services\IAuthPersonalService.cs">
+        <DependentUpon>AuthPersonalService.cs</DependentUpon>
+      </Compile>
     </ItemGroup>
 
 </Project>

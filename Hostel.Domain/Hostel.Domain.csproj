@@ -22,11 +22,14 @@
       <Compile Update="Repositories\ITenantRepository.cs">
         <DependentUpon>TenantRepository.cs</DependentUpon>
       </Compile>
-      <Compile Update="Repositories\IPersonalRepository.cs">
-        <DependentUpon>PersonalRepository.cs</DependentUpon>
+      <Compile Update="Repositories\ISecurityPersonalRepository.cs">
+        <DependentUpon>SecurityPersonalRepository.cs</DependentUpon>
       </Compile>
       <Compile Update="Repositories\IRoomRepository.cs">
         <DependentUpon>RoomRepository.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Repositories\IAuthPersonalRepository.cs">
+        <DependentUpon>AuthPersonalRepository.cs</DependentUpon>
       </Compile>
     </ItemGroup>
 

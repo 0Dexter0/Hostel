@@ -10,9 +10,10 @@ public class HostelDomainInjectionModule : InjectionModuleBase
     {
         services.AddTransient<IHostelRepository, HostelRepository>();
         services.AddTransient<ITenantRepository, TenantRepository>();
-        services.AddTransient<IPersonalRepository, PersonalRepository>();
+        services.AddTransient<ISecurityPersonalRepository, SecurityPersonalRepository>();
         services.AddTransient<IDocumentRepository, DocumentRepository>();
         services.AddTransient<IRoomRepository, RoomRepository>();
         services.AddTransient<IVisitRepository, VisitRepository>();
+        services.AddTransient<IAuthPersonalRepository, AuthPersonalRepository>();
     }
 }

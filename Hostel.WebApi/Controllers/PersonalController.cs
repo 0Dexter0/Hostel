@@ -10,7 +10,7 @@ public class PersonalController : RestControllerBase<SecurityPersonal, PersonalF
 {
     private const string CollectionName = "personal";
 
-    public PersonalController(IPersonalService crudService)
+    public PersonalController(ISecurityPersonalService crudService)
         : base(crudService)
     {
     }

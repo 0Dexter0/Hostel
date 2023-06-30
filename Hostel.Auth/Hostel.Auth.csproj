@@ -3,7 +3,29 @@
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Hostel.Extensibility\Hostel.Extensibility.csproj" />
+      <ProjectReference Include="..\Hostel.Service\Hostel.Service.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.31.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Services\IRegistrationService.cs">
+        <DependentUpon>RegistrationService.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Services\ILoginService.cs">
+        <DependentUpon>LoginService.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Resolvers\IRoleResolver.cs">
+        <DependentUpon>RoleResolver.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
 
 </Project>
