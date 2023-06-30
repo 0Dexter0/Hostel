@@ -17,6 +17,15 @@ public class HostelController : RestControllerBase<Extensibility.Models.Hostel, 
     {
     }
 
-    [Authorize(Policies.Watchman)]
+    [Authorize(Policies.Commandant)]
     public override IActionResult GetAll(HostelFilter filter) => base.GetAll(filter);
+
+    [Authorize(Policies.Admin)]
+    public override IActionResult Add(Extensibility.Models.Hostel model) => base.Add(model);
+
+    [Authorize(Policies.Admin)]
+    public override IActionResult Update(Extensibility.Models.Hostel model) => base.Update(model);
+
+    [Authorize(Policies.Admin)]
+    public override IActionResult Delete(Extensibility.Models.Hostel model) => base.Delete(model);
 }
